@@ -8,9 +8,15 @@ hs.hotkey.bind({"shift", "cmd"}, "a", function()
 	end tell]])
 end)
 
-hs.hotkey.bind({"shift", "cmd"}, "s", function()
+hs.hotkey.bind({"shift", "option"}, "s", function()
     hs.applescript([[tell application "Google Chrome"
 		open location "https://angol-magyar-szotar.hu/"
+	end tell]])
+end)
+
+hs.hotkey.bind({"shift", "option"}, "w", function()
+    hs.applescript([[tell application "Google Chrome"
+		open location "https://signin.aws.amazon.com/signin?redirect_uri=https%3A%2F%2Fconsole.aws.amazon.com%2Fconsole%2Fhome%3Fstate%3DhashArgs%2523%26isauthcode%3Dtrue&client_id=arn%3Aaws%3Aiam%3A%3A015428540659%3Auser%2Fhomepage&forceMobileApp=0&code_challenge=hxzWx-iYvJE2zkmJGoOpMPHq56OlKVDXTdKHFW_bFT0&code_challenge_method=SHA-256"
 	end tell]])
 end)
 
