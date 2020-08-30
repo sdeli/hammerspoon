@@ -8,15 +8,9 @@ hs.hotkey.bind({"shift", "cmd"}, "a", function()
 	end tell]])
 end)
 
-hs.hotkey.bind({"shift", "option"}, "s", function()
-    hs.applescript([[tell application "Google Chrome"
-		open location "https://angol-magyar-szotar.hu/"
-	end tell]])
-end)
-
 hs.hotkey.bind({"shift", "option"}, "w", function()
     hs.applescript([[tell application "Google Chrome"
-		open location "https://signin.aws.amazon.com/signin?redirect_uri=https%3A%2F%2Fconsole.aws.amazon.com%2Fconsole%2Fhome%3Fstate%3DhashArgs%2523%26isauthcode%3Dtrue&client_id=arn%3Aaws%3Aiam%3A%3A015428540659%3Auser%2Fhomepage&forceMobileApp=0&code_challenge=hxzWx-iYvJE2zkmJGoOpMPHq56OlKVDXTdKHFW_bFT0&code_challenge_method=SHA-256"
+		open location "https://us-east-2.console.aws.amazon.com/"
 	end tell]])
 end)
 
@@ -56,6 +50,12 @@ hs.hotkey.bind({"shift", "cmd"}, "e", function()
 	end tell]])
 end)
 
+hs.hotkey.bind({"shift", "cmd"}, "m", function()
+    hs.applescript([[tell application "Google Chrome"
+		open location "https://www.messenger.com/"
+	end tell]])
+end)
+
 hs.hotkey.bind({"shift", "cmd"}, "k", function()
     hs.applescript([[tell application "Google Chrome"
 		open location "https://keep.google.com/"
@@ -64,14 +64,20 @@ end)
 
 hs.hotkey.bind({"shift", "cmd"}, "i", function()
     hs.applescript([[tell application "Google Chrome"
-		open location "https://cloudstorm.atlassian.net/jira/software/projects/NDEV/boards/31"
+		open location "https://cloudstorm.atlassian.net/jira/software/projects/NDEV/boards/31?assignee=5dc0339a16a90b0df7c6c781"
+	end tell]])
+end)
+
+hs.hotkey.bind({"shift", "option"}, "s", function()
+    hs.applescript([[tell application "Google Chrome"
+		open location "https://projects.invisionapp.com/d/main#/projects/prototypes/19224843"
 	end tell]])
 end)
 
 hs.hotkey.bind({"shift", "cmd"}, "s", function()
-    hs.applescript([[tell application "Google Chrome"
-		open location "https://projects.invisionapp.com/d/main#/projects/prototypes/19224843"
-	end tell]])
+  hs.applescript([[tell application "Google Chrome"
+  open location "https://angol-magyar-szotar.hu/"
+end tell]])
 end)
 
 hs.hotkey.bind({"alt"}, "e", function()
