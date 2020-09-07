@@ -172,10 +172,10 @@ local function updateWindowCycler()
   -- end√printObj
 end
 
-hs.hotkey.bind('alt', "tab", function()
-    updateWindowCycler()
-    windowCycler():focus()
-  end)
+-- hs.hotkey.bind('alt', "tab", function()
+--     updateWindowCycler()
+--     windowCycler():focus()
+--   end)
 
 hs.hotkey.bind('alt', "§", function()
   print('funck')
