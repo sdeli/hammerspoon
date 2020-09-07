@@ -10,7 +10,7 @@ end)
 
 hs.hotkey.bind({"shift", "option"}, "w", function()
     hs.applescript([[tell application "Google Chrome"
-		open location "https://us-east-2.console.aws.amazon.com/"
+		open location "https://eu-central-1.console.aws.amazon.com/console/home?region=eu-central-1#"
 	end tell]])
 end)
 
@@ -39,20 +39,12 @@ hs.hotkey.bind({"shift", "cmd"}, "h", function()
 end)
 
 hs.hotkey.bind({"shift", "cmd"}, "l", function()
-    hs.applescript([[tell application "Google Chrome"
-		open location "https://calendar.google.com/calendar/r"
-	end tell]])
+    hs.applescript([[tell application "GCal for Google Calendar" to activate]])
 end)
 
 hs.hotkey.bind({"shift", "cmd"}, "e", function()
     hs.applescript([[tell application "Google Chrome"
 		open location "https://www.udemy.com/"
-	end tell]])
-end)
-
-hs.hotkey.bind({"shift", "cmd"}, "m", function()
-    hs.applescript([[tell application "Google Chrome"
-		open location "https://www.messenger.com/"
 	end tell]])
 end)
 
@@ -92,11 +84,11 @@ hs.hotkey.bind({"alt"}, "e", function()
     ]])
 end)
 
-hs.hotkey.bind({"shift", "cmd"}, "c", function()
-    hs.applescript([[tell application "Calculator"
-		activate
-	end tell]])
-end)
+-- hs.hotkey.bind({"shift", "cmd"}, "c", function()
+--     hs.applescript([[tell application "Calculator"
+-- 		activate
+-- 	end tell]])
+-- end)
 
 hs.hotkey.bind({"shift", "cmd"}, "t", function()
     hs.applescript([[tell application "Terminal"
@@ -171,7 +163,6 @@ local function updateWindowCycler()
   -- if not hs.fnutils.contains(currentWindowSet, hs.window.focusedWindow()) then
     currentWindowSet = hs.window.allWindows()
     print(type(currentWindowSet))
-    print('fuck')
     print(currentWindowSet[2]:application())
     printTable(currentWindowSet)
     -- print(dump(currentWindowSet))
