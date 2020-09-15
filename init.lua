@@ -39,7 +39,9 @@ hs.hotkey.bind({"shift", "cmd"}, "h", function()
 end)
 
 hs.hotkey.bind({"shift", "cmd"}, "l", function()
-    hs.applescript([[tell application "GCal for Google Calendar" to activate]])
+    hs.applescript([[tell application "Google Chrome"
+		open location "https://calendar.google.com/calendar/r"
+	end tell]])
 end)
 
 hs.hotkey.bind({"shift", "cmd"}, "e", function()
@@ -48,7 +50,7 @@ hs.hotkey.bind({"shift", "cmd"}, "e", function()
 	end tell]])
 end)
 
-hs.hotkey.bind({"shift", "cmd"}, "k", function()
+hs.hotkey.bind({"shift", "cmd"}, "k", function() 
     hs.applescript([[tell application "Google Chrome"
 		open location "https://keep.google.com/"
 	end tell]])
@@ -72,7 +74,7 @@ hs.hotkey.bind({"shift", "cmd"}, "s", function()
 end tell]])
 end)
 
-hs.hotkey.bind({"alt"}, "e", function()
+hs.hotkey.bind({"option"}, "e", function()
     hs.applescript([[
         set targetFolder to ((path to desktop) as text) & "/Users/sandordeli"
 
@@ -84,15 +86,26 @@ hs.hotkey.bind({"alt"}, "e", function()
     ]])
 end)
 
--- hs.hotkey.bind({"shift", "cmd"}, "c", function()
---     hs.applescript([[tell application "Calculator"
--- 		activate
--- 	end tell]])
--- end)
+hs.hotkey.bind({"option"}, "s", function()
+    hs.applescript([[
+      set TheNameOfTheWindowYouSeek to "/Users/sandordeli/Desktop"
+
+      tell application "Finder"
+        set allwindows to get every window
+      end tell
+      
+      repeat with i in allwindows
+        if i's name is TheNameOfTheWindowYouSeek then
+          tell application "Finder" to close i
+        end if
+      end repeat
+      
+      do shell script "open /Users/sandordeli/Desktop"
+    ]])
+end)
 
 hs.hotkey.bind({"shift", "cmd"}, "t", function()
     hs.applescript([[tell application "Terminal"
-    if not (exists window 1) then reopen
     activate
 end tell]])
 end)
@@ -106,106 +119,8 @@ hs.hotkey.bind({"shift", "cmd"}, "x", function()
   end tell]])
 end)
 
--- hs.hotkey.bind({"shift", "cmd"}, "e", function()
---     hs.applescript([[   
---         set targetFolder to POSIX file "/Users/sandordeli"´
---         tell application "Finder"
---             reveal targetFolder
---             activate
---         end tell
-        
---     ]])
--- end)
-
--- hs.hotkey.bind({"shift", "cmd"}, "u", function()
---     hs.applescript("do shell script \"open /Users/sandordeli/\"")
--- end)
-
-function reloadConfig(files)
-    doReload = false
-    for _,file in pairs(files) do
-        if file:sub(-4) == ".lua" then
-            doReload = true
-        end
-    end
-    if doReload then
-        hs.alert.show("Config loaded")
-        hs.reload()
-    end
-end
-
-myWatcher = hs.pathwatcher.new(os.getenv("HOME") .. "/.hammerspoon/", reloadConfig):start()
-
-local currentWindowSet = {}
-local windowCycler = nil
-
-local wf = hs.window.filter.new(function(win)
-    local fw = hs.window.focusedWindow()
-    return (
-      win:isStandard() and
-      win:application() == fw:application() and
-      win:screen() == fw:screen()
-    )
-  end)
-
-local function makeTableCycler(t)
-  local i = 1
-  return function(d)
-    local j = d and d < 0 and -2 or 0
-    i = (i + j) % #t + 1
-    local x = t[i]
-    return x
-  end
-end
-
-local function updateWindowCycler()
-  
-  -- if not hs.fnutils.contains(currentWindowSet, hs.window.focusedWindow()) then
-    currentWindowSet = hs.window.allWindows()
-    print(type(currentWindowSet))
-    print(currentWindowSet[2]:application())
-    printTable(currentWindowSet)
-    -- print(dump(currentWindowSet))
-    -- print(#currentWindowSet)
-    -- printTable(currentWindowSet)
-    -- windowCycler = makeTableCycler(currentWindowSet)
-  -- end√printObj
-end
-
--- hs.hotkey.bind('alt', "tab", function()
---     updateWindowCycler()
---     windowCycler():focus()
---   end)
-
-hs.hotkey.bind('alt', "§", function()
-  print('funck')
-    updateWindowCycler()
-    -- windowCycler(-1):focus()
-  end)
-  print('funck')
-
-  function dump(o)
-    if type(o) == 'table' then
-       local s = '{ '
-       for k,v in pairs(o) do
-          if type(k) ~= 'number' then k = '"'..k..'"' end
-          s = s .. '['..k..'] = ' .. dump(v) .. ','
-       end
-       return s .. '} '
-    else
-       return tostring(o)
-    end
- end
-
- function printTable(tabel)
-    -- for k,v in ipairs(tabel) do
-    --     print(k,v)
-    -- end
-    
-    -- table.sort(tabel)
-    -- print("sorted table")
-    
-    for k,v in ipairs(tabel) do
-        print(k,v)
-    end
- end
+hs.hotkey.bind({"shift", "option"}, "q", function()
+  hs.execute([[   
+    /Users/sandordeli/Projects/usr-local-bin/click_arrow.sh
+  ]])
+end)
