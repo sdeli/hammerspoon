@@ -46,12 +46,6 @@ hs.hotkey.bind({"shift", "cmd"}, "e", function()
 	end tell]])
 end)
 
--- hs.hotkey.bind({"shift", "cmd"}, "k", function() 
---     hs.applescript([[tell application "Google Chrome"
--- 		open location "https://keep.google.com/"
--- 	end tell]])
--- end)
-
 hs.hotkey.bind({"shift", "cmd"}, "k", function() 
     hs.execute("open -na 'Google Chrome' --args --profile-directory='Profile 3' https://keep.google.com/u/0/")
 end)
@@ -148,7 +142,7 @@ hs.hotkey.bind({"shift", "option"}, "q", function()
   ]])
 end)
 
-hs.hotkey.bind({"shift", "cmd"}, "]", function()
+-- hs.hotkey.bind({"shift", "cmd"}, "]", function()
 --   hs.applescript([[   
 --     tell application "Terminal"
 --   activate
@@ -157,18 +151,18 @@ hs.hotkey.bind({"shift", "cmd"}, "]", function()
 --   -- // write some linux commands to remote server
 -- end tell
 --   ]])
-  hs.applescript([[   
-    tell application "iTerm2"
-  activate
-  exec command "/Users/sandordeli/Projects/usr-local-bin/mov-to-gif.sh & exit"
-end tell
-  ]])
+--   hs.applescript([[   
+--     tell application "iTerm2"
+--   activate
+--   exec command "/Users/sandordeli/Projects/usr-local-bin/mov-to-gif.sh & exit"
+-- end tell
+--   ]])
   -- hs.applescript([[   
   -- do script "bash /Users/sandordeli/Projects/usr-local-bin/mov-to-gif.sh & exit"
   -- -- // write user's password
   -- -- // write some linux commands to remote server
   -- ]])
-end)
+-- end)
 
 -- hs.hotkey.bind({"ctrl", "option", "cmd"}, "up", function()
 --   hs.execute([[   
