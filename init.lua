@@ -80,7 +80,7 @@ hs.hotkey.bind({"option"}, "e", function()
     ]])
 end)
 
-hs.hotkey.bind({"option"}, "s", function()
+hs.hotkey.bind({"option"}, "§", function()
     hs.applescript([[
       set TheNameOfTheWindowYouSeek to "/Users/sandordeli/Documents/screenshots"
 
@@ -98,7 +98,7 @@ hs.hotkey.bind({"option"}, "s", function()
     ]])
 end)
 
-hs.hotkey.bind({"option"}, "a", function()
+hs.hotkey.bind({"option"}, "1", function()
     hs.applescript([[
       set TheNameOfTheWindowYouSeek to "/Applications"
 
@@ -124,15 +124,10 @@ end tell]])
 end)
 
 hs.hotkey.bind({"shift", "cmd"}, "x", function()
-    hs.applescript([[tell application "System Events"
-    tell application "Google Chrome"
-      make new window
-      activate
-    end tell
-  end tell]])
+  hs.execute("open -na 'Google Chrome' --args --profile-directory='Profile 1'")
 end)
 
-hs.hotkey.bind({"shift", "cmd"}, "x", function()
+hs.hotkey.bind({"shift", "option"}, "x", function()
   hs.execute("open -na 'Google Chrome' --args --profile-directory='Profile 3'")
 end)
 
