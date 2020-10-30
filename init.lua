@@ -80,7 +80,7 @@ hs.hotkey.bind({"option"}, "e", function()
     ]])
 end)
 
-hs.hotkey.bind({"option"}, "§", function()
+hs.hotkey.bind({"option"}, "1", function()
     hs.applescript([[
       set TheNameOfTheWindowYouSeek to "/Users/sandordeli/Documents/screenshots"
 
@@ -98,7 +98,7 @@ hs.hotkey.bind({"option"}, "§", function()
     ]])
 end)
 
-hs.hotkey.bind({"option"}, "1", function()
+hs.hotkey.bind({"option"}, "2", function()
     hs.applescript([[
       set TheNameOfTheWindowYouSeek to "/Applications"
 
@@ -113,6 +113,24 @@ hs.hotkey.bind({"option"}, "1", function()
       end repeat
       
       do shell script "open /Applications"
+    ]])
+end)
+
+hs.hotkey.bind({"option"}, "§", function()
+    hs.applescript([[
+      set TheNameOfTheWindowYouSeek to "/Users/sandordeli/Downloads"
+
+      tell application "Finder"
+        set allwindows to get every window
+      end tell
+      
+      repeat with i in allwindows
+        if i's name is TheNameOfTheWindowYouSeek then
+          tell application "Finder" to close i
+        end if
+      end repeat
+      
+      do shell script "open /Users/sandordeli/Downloads"
     ]])
 end)
 
