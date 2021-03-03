@@ -30,7 +30,7 @@ end)
 
 hs.hotkey.bind({"shift", "cmd"}, "h", function()
     hs.applescript([[tell application "Google Chrome"
-		open location "https://github.com/cloudstorm"
+		open location "https://github.com"
 	end tell]])
 end)
 
@@ -50,17 +50,17 @@ hs.hotkey.bind({"shift", "cmd"}, "k", function()
     hs.execute("open -na 'Google Chrome' --args --profile-directory='Profile 3' https://keep.google.com/u/0/")
 end)
 
-hs.hotkey.bind({"shift", "cmd"}, "i", function()
-    hs.applescript([[tell application "Google Chrome"
-		open location "https://cloudstorm.atlassian.net/jira/software/projects/NDEV/boards/31?assignee=5dc0339a16a90b0df7c6c781"
-	end tell]])
-end)
+-- hs.hotkey.bind({"shift", "cmd"}, "i", function()
+--     hs.applescript([[tell application "Google Chrome"
+-- 		open location "https://cloudstorm.atlassian.net/jira/software/projects/NDEV/boards/31?assignee=5dc0339a16a90b0df7c6c781"
+-- 	end tell]])
+-- end)
 
-hs.hotkey.bind({"shift", "option"}, "s", function()
-    hs.applescript([[tell application "Google Chrome"
-		open location "https://projects.invisionapp.com/d/main#/projects/prototypes/19224843"
-	end tell]])
-end)
+-- hs.hotkey.bind({"shift", "option"}, "s", function()
+--     hs.applescript([[tell application "Google Chrome"
+-- 		open location "https://projects.invisionapp.com/d/main#/projects/prototypes/19224843"
+-- 	end tell]])
+-- end)
 
 hs.hotkey.bind({"shift", "cmd"}, "s", function()
   hs.applescript([[tell application "Google Chrome"
@@ -135,18 +135,21 @@ hs.hotkey.bind({"option"}, "§", function()
 end)
 
 hs.hotkey.bind({"shift", "cmd"}, "t", function()
-    hs.applescript([[tell application "Terminal"
-      do script " "  
-      activate  
-end tell]])
+  hs.execute("open -n -a Terminal")
 end)
 
 hs.hotkey.bind({"shift", "cmd"}, "x", function()
-  hs.execute("open -na 'Google Chrome' --args --profile-directory='Profile 1'")
+  -- hs.execute("open -na 'Google Chrome' --args --profile-directory='Profile 1'")
+  hs.applescript([[tell application "System Events"
+  tell application "Google Chrome"
+    make new window
+    activate
+  end tell
+end tell]])
 end)
 
-hs.hotkey.bind({"shift", "option"}, "x", function()
-  hs.execute("open -na 'Google Chrome' --args --profile-directory='Profile 3'")
+hs.hotkey.bind({"shift", "cmd"}, "q", function()
+  hs.execute("/Users/sandordeli/Projects/usr-local-bin/click_arrow.sh")
 end)
 
 hs.hotkey.bind({"shift", "option"}, "q", function()
