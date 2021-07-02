@@ -16,6 +16,12 @@ hs.hotkey.bind({"shift", "cmd"}, "g", function()
 	end tell]])
 end)
 
+hs.hotkey.bind({"shift", "cmd"}, "b", function()
+    hs.applescript([[tell application "Google Chrome"
+		open location "https://bitbucket.it.ewerk.com/projects/UBA/repos/platform-ui/browse"
+	end tell]])
+end)
+
 hs.hotkey.bind({"shift", "cmd"}, "d", function()
     hs.applescript([[tell application "Google Chrome"
 		open location "https://drive.google.com/drive/my-drive"
@@ -46,15 +52,29 @@ hs.hotkey.bind({"shift", "cmd"}, "e", function()
 	end tell]])
 end)
 
-hs.hotkey.bind({"shift", "cmd"}, "k", function() 
-    hs.execute("open -na 'Google Chrome' --args --profile-directory='Profile 3' https://keep.google.com/u/0/")
+hs.hotkey.bind({"shift", "cmd"}, "k", function()
+  hs.applescript([[tell application "Google Chrome"
+  open location "https://keep.google.com/u/0/"
+end tell]])
 end)
 
--- hs.hotkey.bind({"shift", "cmd"}, "i", function()
---     hs.applescript([[tell application "Google Chrome"
--- 		open location "https://cloudstorm.atlassian.net/jira/software/projects/NDEV/boards/31?assignee=5dc0339a16a90b0df7c6c781"
--- 	end tell]])
--- end)
+hs.hotkey.bind({"shift", "cmd"}, "i", function()
+    hs.applescript([[tell application "Google Chrome"
+		open location "https://app.clubhouse.io/s1seven/stories/space/1395/everything"
+	end tell]])
+end)
+
+hs.hotkey.bind({"shift", "cmd"}, "m", function()
+  hs.execute('/Users/sandordeli/Projects/usr-local-bin/imm')
+end)
+
+hs.hotkey.bind({"shift", "option"}, "c", function()
+  hs.execute('/Users/sandordeli/Projects/usr-local-bin/toggle-dashes-on-clipboard.sh')
+end)
+
+hs.hotkey.bind({"shift", "option"}, "u", function()
+  hs.execute('/Users/sandordeli/Projects/usr-local-bin/to-uppercase-clipboard.sh')
+end)
 
 -- hs.hotkey.bind({"shift", "option"}, "s", function()
 --     hs.applescript([[tell application "Google Chrome"
@@ -64,7 +84,7 @@ end)
 
 hs.hotkey.bind({"shift", "cmd"}, "s", function()
   hs.applescript([[tell application "Google Chrome"
-  open location "https://angol-magyar-szotar.hu/"
+  open location "https://en.bab.la/dictionary/english-hungarian/preamble"
 end tell]])
 end)
 
@@ -136,6 +156,16 @@ end)
 
 hs.hotkey.bind({"shift", "cmd"}, "t", function()
   hs.execute("open -n -a Terminal")
+end)
+
+hs.hotkey.bind({"shift", "option"}, "n", function()
+  hs.execute('/usr/local/bin/code -n "/Volumes/GoogleDrive/My Drive/"')
+end)
+
+hs.hotkey.bind({"shift", "cmd"}, "n", function()
+  hs.applescript([[tell application "Google Chrome"
+  open location "https://nemet-magyar-szotar.hu/"
+end tell]])
 end)
 
 hs.hotkey.bind({"shift", "cmd"}, "x", function()
