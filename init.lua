@@ -1,7 +1,25 @@
+hs.hotkey.bind({"shift", "option"}, "k", function()
+    hs.applescript([[tell application "Google Chrome"
+		open location "https://ads.google.com/aw/keywordplanner/home?ocid=681900448&__u=3057801635&__c=1346120352&authuser=0"
+	end tell]])
+end)
+
+hs.hotkey.bind({"shift", "option"}, "a", function()
+    hs.applescript([[tell application "Google Chrome"
+		open location "https://ads.google.com/aw/overview?ocid=681900448&workspaceId=0&euid=200221115&__u=3057801635&uscid=681900448&__c=1346120352&authuser=0"
+	end tell]])
+end)
+
 hs.hotkey.bind({"shift", "cmd"}, "a", function()
     hs.applescript([[tell application "Google Chrome"
 		open location "https://www.youtube.com/"
 	end tell]])
+end)
+
+hs.hotkey.bind({"shift", "cmd"}, "i", function()
+  hs.applescript([[tell application "Google Chrome"
+  open location "https://trello.com/b/Jv3ZsLsq/all-tasks"
+end tell]])
 end)
 
 hs.hotkey.bind({"shift", "option"}, "w", function()
@@ -58,12 +76,6 @@ hs.hotkey.bind({"shift", "cmd"}, "k", function()
 end tell]])
 end)
 
-hs.hotkey.bind({"shift", "cmd"}, "i", function()
-    hs.applescript([[tell application "Google Chrome"
-		open location "https://app.clubhouse.io/s1seven/stories/space/1395/everything"
-	end tell]])
-end)
-
 hs.hotkey.bind({"shift", "cmd"}, "m", function()
   hs.execute('/Users/sandordeli/Projects/usr-local-bin/imm')
 end)
@@ -75,12 +87,6 @@ end)
 hs.hotkey.bind({"shift", "option"}, "u", function()
   hs.execute('/Users/sandordeli/Projects/usr-local-bin/to-uppercase-clipboard.sh')
 end)
-
--- hs.hotkey.bind({"shift", "option"}, "s", function()
---     hs.applescript([[tell application "Google Chrome"
--- 		open location "https://projects.invisionapp.com/d/main#/projects/prototypes/19224843"
--- 	end tell]])
--- end)
 
 hs.hotkey.bind({"shift", "cmd"}, "s", function()
   hs.applescript([[tell application "Google Chrome"
@@ -137,23 +143,8 @@ hs.hotkey.bind({"option"}, "2", function()
 end)
 
 hs.hotkey.bind({"option"}, "§", function()
-    hs.applescript([[
-      set TheNameOfTheWindowYouSeek to "/Users/sandordeli/Downloads"
-
-      tell application "Finder"
-        set allwindows to get every window
-      end tell
-      
-      repeat with i in allwindows
-        if i's name is TheNameOfTheWindowYouSeek then
-          tell application "Finder" to close i
-        end if
-      end repeat
-      
-      do shell script "open /Users/sandordeli/Downloads"
-    ]])
+  hs.execute("open -n /Users/sandordeli/Downloads")
 end)
-
 hs.hotkey.bind({"shift", "cmd"}, "t", function()
   hs.execute("open -n -a Terminal")
 end)
@@ -169,7 +160,6 @@ end tell]])
 end)
 
 hs.hotkey.bind({"shift", "cmd"}, "x", function()
-  -- hs.execute("open -na 'Google Chrome' --args --profile-directory='Profile 1'")
   hs.applescript([[tell application "System Events"
   tell application "Google Chrome"
     make new window
@@ -187,162 +177,3 @@ hs.hotkey.bind({"shift", "option"}, "q", function()
     /Users/sandordeli/Projects/usr-local-bin/click_arrow.sh
   ]])
 end)
-
--- hs.hotkey.bind({"shift", "cmd"}, "]", function()
---   hs.applescript([[   
---     tell application "Terminal"
---   activate
---   do script "bash /Users/sandordeli/Projects/usr-local-bin/mov-to-gif.sh & exit"
---   -- // write user's password
---   -- // write some linux commands to remote server
--- end tell
---   ]])
---   hs.applescript([[   
---     tell application "iTerm2"
---   activate
---   exec command "/Users/sandordeli/Projects/usr-local-bin/mov-to-gif.sh & exit"
--- end tell
---   ]])
-  -- hs.applescript([[   
-  -- do script "bash /Users/sandordeli/Projects/usr-local-bin/mov-to-gif.sh & exit"
-  -- -- // write user's password
-  -- -- // write some linux commands to remote server
-  -- ]])
--- end)
-
--- hs.hotkey.bind({"ctrl", "option", "cmd"}, "up", function()
---   hs.execute([[   
---     /Users/sandordeli/Projects/usr-local-bin/reposition-windows-on-left.sh left &
---     /Users/sandordeli/Projects/usr-local-bin/reposition-windows-on-right.sh left &
---   ]])
--- end)
--- hs.hotkey.bind({"ctrl", "option", "cmd"}, "down", function()
---   hs.execute([[   
---     /Users/sandordeli/Projects/usr-local-bin/reposition-windows-on-left.sh right &
---     /Users/sandordeli/Projects/usr-local-bin/reposition-windows-on-right.sh right &
---   ]])
--- end)
-
--- hs.hotkey.bind({"cmd", "option"}, ",", function()
---   hs.applescript([[   
---     beep 1
---   ]])
--- end)
-
--- hs.hotkey.bind({"cmd", "option", "ctrl"}, "up", function()
---   hs.applescript([[
---      on tillSideBySideWindows(direction)
---   tell application "System Events"
--- 		set allVisibleProcessNames to name of processes whose visible is true
-		
--- 		repeat with processName in allVisibleProcessNames
-			
--- 			set windowsOfCurrentApp to every window of application process processName
-			
--- 			repeat with currentWindow in windowsOfCurrentApp
-				
--- 				set currentWindowsSize to size of currentWindow
--- 				set currentWindowsWidth to item 1 of currentWindowsSize
-				
--- 				set currentWindowsPosition to position of currentWindow
--- 				set currentWindowsLeftPos to item 1 of currentWindowsPosition
-				
--- 				if currentWindowsLeftPos = 0 then
--- 					if direction = "right" then
--- 						set currentWindowsWidth to currentWindowsWidth + 30
--- 					else
--- 						set currentWindowsWidth to currentWindowsWidth - 30
--- 					end if
-					
--- 					set currentWindowsHeight to item 2 of currentWindowsSize
--- 					set winName to name of currentWindow
--- 					set size of window winName of application process processName to {currentWindowsWidth, currentWindowsHeight}
--- 				end if
-				
--- 				if (currentWindowsLeftPos + currentWindowsWidth) = 1680 then
--- 					set currentWindowsHeight to item 2 of currentWindowsSize
-					
--- 					if direction = "right" then
--- 						set currentWindowsLeftPos to currentWindowsLeftPos + 30
--- 						set currentWindowsWidth to currentWindowsWidth - 30
--- 					else
--- 						set currentWindowsLeftPos to currentWindowsLeftPos - 30
--- 						set currentWindowsWidth to currentWindowsWidth + 30
--- 					end if
-					
--- 					set winName to name of currentWindow
--- 					set position of window winName of application process processName to {currentWindowsLeftPos, 0}
--- 					set size of window winName of application process processName to {currentWindowsWidth, currentWindowsHeight}
--- 					get currentWindowsWidth
--- 				end if
--- 			end repeat
--- 		end repeat
--- 	end tell
-	
--- end tillSideBySideWindows
-
--- tillSideBySideWindows("left")
-
--- ]])
--- end)
-
--- hs.hotkey.bind({"cmd", "option", "ctrl"}, "down", function()
---   hs.applescript([[
---      on tillSideBySideWindows(direction)
--- 	tell application "System Events"
--- 		set allVisibleProcessNames to name of processes whose visible is true
-		
--- 		repeat with processName in allVisibleProcessNames
-			
--- 			set windowsOfCurrentApp to every window of application process processName
-			
--- 			repeat with currentWindow in windowsOfCurrentApp
-				
--- 				set currentWindowsSize to size of currentWindow
--- 				set currentWindowsWidth to item 1 of currentWindowsSize
-				
--- 				set currentWindowsPosition to position of currentWindow
--- 				set currentWindowsLeftPos to item 1 of currentWindowsPosition
-				
--- 				if currentWindowsLeftPos = 0 then
--- 					if direction = "right" then
--- 						set currentWindowsWidth to currentWindowsWidth + 30
--- 					else
--- 						set currentWindowsWidth to currentWindowsWidth - 30
--- 					end if
-					
--- 					set currentWindowsHeight to item 2 of currentWindowsSize
--- 					set winName to name of currentWindow
--- 					set size of window winName of application process processName to {currentWindowsWidth, currentWindowsHeight}
--- 				end if
-				
--- 				if (currentWindowsLeftPos + currentWindowsWidth) = 1680 then
--- 					set currentWindowsHeight to item 2 of currentWindowsSize
-					
--- 					if direction = "right" then
--- 						set currentWindowsLeftPos to currentWindowsLeftPos + 30
--- 						set currentWindowsWidth to currentWindowsWidth - 30
--- 					else
--- 						set currentWindowsLeftPos to currentWindowsLeftPos - 30
--- 						set currentWindowsWidth to currentWindowsWidth + 30
--- 					end if
-					
--- 					set winName to name of currentWindow
--- 					set position of window winName of application process processName to {currentWindowsLeftPos, 0}
--- 					set size of window winName of application process processName to {currentWindowsWidth, currentWindowsHeight}
--- 					get currentWindowsWidth
--- 				end if
--- 			end repeat
--- 		end repeat
--- 	end tell
--- end tillSideBySideWindows
-
--- tillSideBySideWindows("right")
--- ]])
--- end)
-
--- hs.hotkey.bind({"cmd", "option"}, ",", function()
---   hs.applescript([[   
---     beep 1
---   ]])
--- end)
