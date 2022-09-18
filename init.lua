@@ -1,4 +1,4 @@
-hs.hotkey.bind({"shift", "option"}, "k", function()
+hs.hotkey.bind({"shift", "option"}, "t", function()
     hs.applescript([[tell application "Google Chrome"
 		open location "https://ads.google.com/aw/keywordplanner/home?ocid=681900448&__u=3057801635&__c=1346120352&authuser=0"
 	end tell]])
@@ -6,7 +6,7 @@ end)
 
 hs.hotkey.bind({"shift", "option"}, "a", function()
     hs.applescript([[tell application "Google Chrome"
-		open location "https://ads.google.com/aw/overview?ocid=681900448&workspaceId=0&euid=200221115&__u=3057801635&uscid=681900448&__c=1346120352&authuser=0"
+		open location "https://ads.google.com/aw/changehistory?ocid=1030815110&scorecardState=0&authuser=0&__u=3057801635&__c=4590578390&tableState=EgAyEgoHCOYPEAgYAhIHCOYPEAkYEQ%3D%3D"
 	end tell]])
 end)
 
@@ -18,7 +18,13 @@ end)
 
 hs.hotkey.bind({"shift", "cmd"}, "i", function()
   hs.applescript([[tell application "Google Chrome"
-  open location "https://trello.com/b/Jv3ZsLsq/all-tasks"
+  open location "https://trello.com/b/Jv3ZsLsq/main-board"
+end tell]])
+end)
+
+hs.hotkey.bind({"shift", "option"}, "p", function()
+  hs.applescript([[tell application "Google Chrome"
+  open location "https://trello.com/b/SfajUbei/ppc"
 end tell]])
 end)
 
