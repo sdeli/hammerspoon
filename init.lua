@@ -100,7 +100,7 @@ hs.hotkey.bind({"shift", "cmd"}, "s", function()
 end tell]])
 end)
 
-hs.hotkey.bind({"option"}, "e", function()
+hs.hotkey.bind({"cmd"}, "e", function()
     hs.applescript([[
         set targetFolder to ((path to desktop) as text) & "/Users/sandordeli"
 
@@ -152,7 +152,7 @@ hs.hotkey.bind({"option"}, "§", function()
   hs.execute("open -n /Users/sandordeli/Downloads")
 end)
 hs.hotkey.bind({"shift", "cmd"}, "t", function()
-  hs.execute("open -n -a Terminal")
+  hs.execute("open -n -a iTerm")
 end)
 
 hs.hotkey.bind({"shift", "option"}, "n", function()
@@ -182,4 +182,12 @@ hs.hotkey.bind({"shift", "option"}, "q", function()
   hs.execute([[   
     /Users/sandordeli/Projects/usr-local-bin/click_arrow.sh
   ]])
+end)
+
+hs.hotkey.bind({"cmd"}, "1", function()
+  hs.eventtap.keyStroke({"ctrl", 'shift'}, "tab")
+end)
+
+hs.hotkey.bind({"cmd"}, "2", function()
+  hs.eventtap.keyStroke({"ctrl"}, "tab")
 end)
