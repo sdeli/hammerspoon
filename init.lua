@@ -4,12 +4,6 @@ hs.hotkey.bind({"shift", "option"}, "t", function()
 	end tell]])
 end)
 
-hs.hotkey.bind({"shift", "option"}, "a", function()
-    hs.applescript([[tell application "Google Chrome"
-		open location "https://ads.google.com/aw/changehistory?ocid=1030815110&scorecardState=0&authuser=0&__u=3057801635&__c=4590578390&tableState=EgAyEgoHCOYPEAgYAhIHCOYPEAkYEQ%3D%3D"
-	end tell]])
-end)
-
 hs.hotkey.bind({"shift", "cmd"}, "a", function()
     hs.applescript([[tell application "Google Chrome"
 		open location "https://www.youtube.com/"
